@@ -56,13 +56,13 @@ Proyek ini dibangun untuk memenuhi tugas **Responsi Praktikum Pemrograman Mobile
 
 ## 📱 Tampilan Antarmuka (Screenshots)
 
-| 1. Home Screen (Cuaca Terkini) | 2. Home Screen (Informasi Tambahan) | 3. Home Screen (Prakiraan Harian) |
-|:---:|:---:|
+| 1. Home Screen (Cuaca Terkini) | 2. Home Screen (Informasi Tambahan) | 3. Home Screen (Prakiraan cuaca 7 hari kedepan) |
+|:---:|:---:|:---:|
 | <img width="776" height="1600" alt="image" src="https://github.com/user-attachments/assets/d23c8f83-bed0-41f9-a7fe-d21ca6b8fe43" /> | <img width="776" height="1600" alt="image" src="https://github.com/user-attachments/assets/5c41f576-fc98-45f5-9876-8690a56a4bde" />
  |<img width="776" height="1600" alt="image" src="https://github.com/user-attachments/assets/22ca6172-fe1f-4055-8372-76b4ee2568dd" />|
 
 | 3. Search Screen (Pencarian API) | 4. Favorites Screen (Kota Favorit) | 5. Archives Search Screen (Riwayat Pencarian) |
-|:---:|:---:|
+|:---:|:---:|:---:|
 |  <img width="776" height="1600" alt="image" src="https://github.com/user-attachments/assets/21f812a8-57bb-4259-bb56-ef864cafcd73" />
 | <img width="776" height="1600" alt="image" src="https://github.com/user-attachments/assets/ed5027ee-6347-42bb-aef1-b64103fe4931" /> | <img width="776" height="1600" alt="image" src="https://github.com/user-attachments/assets/b98bef38-7a81-4bfb-b510-47e5fa6cc9eb" /> |
 
