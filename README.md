@@ -17,8 +17,6 @@ Proyek ini dibangun untuk memenuhi tugas **Responsi Praktikum Pemrograman Mobile
 5. [Implementasi REST API Open-Meteo](#-implementasi-rest-api-open-meteo)
 6. [Penyimpanan Lokal (Local Storage)](#-penyimpanan-lokal-local-storage)
 7. [Panduan Menjalankan Aplikasi](#-panduan-menjalankan-aplikasi)
-8. [Panduan Perekaman Video Penjelasan Kode](#-panduan-perekaman-video-penjelasan-kode)
-9. [Informasi Pengumpulan](#-informasi-pengumpulan)
 
 ---
 
