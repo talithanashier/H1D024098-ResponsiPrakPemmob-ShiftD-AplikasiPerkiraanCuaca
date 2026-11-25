@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/location_model.dart';
+import '../theme/app_theme.dart';
 import '../viewmodels/location_viewmodel.dart';
 import '../viewmodels/weather_viewmodel.dart';
 import '../widgets/empty_error_view.dart';
@@ -50,9 +51,9 @@ class _SearchScreenState extends State<SearchScreen>
         title: const Text('Cari & Pilih Lokasi'),
         bottom: TabBar(
           controller: _tabController,
-          labelColor: const Color(0xFF1E3A8A),
-          unselectedLabelColor: Colors.grey,
-          indicatorColor: const Color(0xFF3B82F6),
+          labelColor: PastelColors.burgundy,
+          unselectedLabelColor: PastelColors.textLight,
+          indicatorColor: PastelColors.burgundy,
           indicatorWeight: 3,
           tabs: [
             const Tab(
@@ -60,7 +61,7 @@ class _SearchScreenState extends State<SearchScreen>
               text: 'Pencarian',
             ),
             Tab(
-              icon: const Icon(Icons.star_rounded),
+              icon: const Icon(Icons.favorite_rounded),
               text: 'Favorit (${locationVM.favorites.length})',
             ),
             Tab(
@@ -72,7 +73,7 @@ class _SearchScreenState extends State<SearchScreen>
       ),
       body: Column(
         children: [
-          // Input Search Bar
+          // Search bar with pastel style
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
             child: TextField(
@@ -80,10 +81,12 @@ class _SearchScreenState extends State<SearchScreen>
               autofocus: false,
               decoration: InputDecoration(
                 hintText: 'Ketik nama kota (contoh: Yogyakarta, Bandung)...',
-                prefixIcon: const Icon(Icons.search_rounded, color: Colors.blueAccent),
+                prefixIcon: const Icon(Icons.search_rounded,
+                    color: PastelColors.burgundySoft),
                 suffixIcon: _searchController.text.isNotEmpty
                     ? IconButton(
-                        icon: const Icon(Icons.clear_rounded),
+                        icon: const Icon(Icons.clear_rounded,
+                            color: PastelColors.textMuted),
                         onPressed: () {
                           _searchController.clear();
                           locationVM.clearSearch();
@@ -103,18 +106,13 @@ class _SearchScreenState extends State<SearchScreen>
             ),
           ),
 
-          // Tab Bar View (Pencarian, Favorit, Riwayat)
+          // Tab contents
           Expanded(
             child: TabBarView(
               controller: _tabController,
               children: [
-                // Tab 1: Hasil Pencarian
                 _buildSearchResultsTab(locationVM),
-
-                // Tab 2: Lokasi Favorit
                 _buildFavoritesTab(locationVM),
-
-                // Tab 3: Riwayat Pencarian
                 _buildHistoryTab(locationVM),
               ],
             ),
@@ -126,13 +124,17 @@ class _SearchScreenState extends State<SearchScreen>
 
   Widget _buildSearchResultsTab(LocationViewModel locationVM) {
     if (locationVM.isSearching) {
-      return const Center(
+      return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircularProgressIndicator(strokeWidth: 3),
-            SizedBox(height: 16),
-            Text('Mencari kota di Open-Meteo...'),
+            CircularProgressIndicator(
+              strokeWidth: 3,
+              color: PastelColors.burgundy,
+            ),
+            const SizedBox(height: 16),
+            const Text('Mencari kota di Open-Meteo...',
+                style: TextStyle(color: PastelColors.textMuted)),
           ],
         ),
       );
@@ -153,16 +155,28 @@ class _SearchScreenState extends State<SearchScreen>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.location_city_rounded, size: 64, color: Colors.grey.shade400),
+              Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: PastelColors.pastelBlue.withValues(alpha: 0.3),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(Icons.location_city_rounded,
+                    size: 56, color: PastelColors.pastelBlueDark),
+              ),
               const SizedBox(height: 16),
               const Text(
                 'Mulai Mencari Kota',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: PastelColors.textDark,
+                ),
               ),
               const SizedBox(height: 8),
-              Text(
+              const Text(
                 'Ketikkan nama kota atau daerah pada kolom pencarian di atas.',
-                style: TextStyle(color: Colors.grey.shade600, fontSize: 13),
+                style: TextStyle(color: PastelColors.textMuted, fontSize: 13),
                 textAlign: TextAlign.center,
               ),
             ],
@@ -187,7 +201,7 @@ class _SearchScreenState extends State<SearchScreen>
                 SnackBar(
                   content: Text(
                     isFav
-                        ? '${loc.name} ditambahkan ke favorit'
+                        ? '${loc.name} ditambahkan ke favorit ❤️'
                         : '${loc.name} dihapus dari favorit',
                   ),
                   duration: const Duration(seconds: 2),
@@ -208,16 +222,28 @@ class _SearchScreenState extends State<SearchScreen>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.star_outline_rounded, size: 64, color: Colors.amber.shade300),
+              Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: PastelColors.burgundyLight.withValues(alpha: 0.5),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(Icons.favorite_border_rounded,
+                    size: 56, color: PastelColors.burgundy),
+              ),
               const SizedBox(height: 16),
               const Text(
                 'Belum Ada Lokasi Favorit',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: PastelColors.textDark,
+                ),
               ),
               const SizedBox(height: 8),
-              Text(
-                'Klik ikon bintang pada hasil pencarian atau halaman utama untuk menyimpan lokasi favorit.',
-                style: TextStyle(color: Colors.grey.shade600, fontSize: 13),
+              const Text(
+                'Klik ikon hati pada hasil pencarian atau halaman utama untuk menyimpan lokasi favorit.',
+                style: TextStyle(color: PastelColors.textMuted, fontSize: 13),
                 textAlign: TextAlign.center,
               ),
             ],
@@ -258,16 +284,28 @@ class _SearchScreenState extends State<SearchScreen>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.history_rounded, size: 64, color: Colors.grey.shade400),
+              Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: PastelColors.oliveLight.withValues(alpha: 0.5),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(Icons.history_rounded,
+                    size: 56, color: PastelColors.olive),
+              ),
               const SizedBox(height: 16),
               const Text(
                 'Riwayat Pencarian Kosong',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: PastelColors.textDark,
+                ),
               ),
               const SizedBox(height: 8),
-              Text(
+              const Text(
                 'Kota yang Anda pilih akan otomatis tersimpan di riwayat ini.',
-                style: TextStyle(color: Colors.grey.shade600, fontSize: 13),
+                style: TextStyle(color: PastelColors.textMuted, fontSize: 13),
                 textAlign: TextAlign.center,
               ),
             ],
@@ -285,16 +323,19 @@ class _SearchScreenState extends State<SearchScreen>
             children: [
               Text(
                 'Pernah Dicari (${locationVM.searchHistory.length})',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
-                  color: Colors.grey.shade700,
+                  color: PastelColors.textMuted,
                 ),
               ),
               TextButton.icon(
                 onPressed: () => locationVM.clearHistory(),
-                icon: const Icon(Icons.delete_sweep_rounded, size: 18),
-                label: const Text('Hapus Semua', style: TextStyle(fontSize: 12)),
+                icon: Icon(Icons.delete_sweep_rounded,
+                    size: 18, color: PastelColors.burgundySoft),
+                label: Text('Hapus Semua',
+                    style: TextStyle(
+                        fontSize: 12, color: PastelColors.burgundySoft)),
               ),
             ],
           ),

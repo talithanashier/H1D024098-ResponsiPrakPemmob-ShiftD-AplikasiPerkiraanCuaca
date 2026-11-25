@@ -14,6 +14,7 @@ class WeatherCodeInfo {
   });
 }
 
+/// Pastel-themed gradient + icon per WMO weather code
 class WeatherCodeHelper {
   static WeatherCodeInfo getInfo(int code) {
     switch (code) {
@@ -21,89 +22,89 @@ class WeatherCodeHelper {
         return const WeatherCodeInfo(
           description: 'Cerah',
           icon: Icons.wb_sunny_rounded,
-          gradientColors: [Color(0xFF2193b0), Color(0xFF6dd5ed)],
-          primaryColor: Colors.amber,
+          gradientColors: [Color(0xFFFFE9A0), Color(0xFFF5CAC3)],
+          primaryColor: Color(0xFFD4A843),
         );
       case 1:
         return const WeatherCodeInfo(
           description: 'Sebagian Cerah',
           icon: Icons.wb_sunny_outlined,
-          gradientColors: [Color(0xFF2980B9), Color(0xFF6DD5FA)],
-          primaryColor: Colors.amber,
+          gradientColors: [Color(0xFFFFE9A0), Color(0xFFB8D8E8)],
+          primaryColor: Color(0xFFD4A843),
         );
       case 2:
         return const WeatherCodeInfo(
           description: 'Berawan Sebagian',
           icon: Icons.cloud_queue_rounded,
-          gradientColors: [Color(0xFF3a7bd5), Color(0xFF3a6073)],
-          primaryColor: Colors.lightBlueAccent,
+          gradientColors: [Color(0xFFB8D8E8), Color(0xFFC5DEAD)],
+          primaryColor: Color(0xFF6FA3C0),
         );
       case 3:
         return const WeatherCodeInfo(
           description: 'Berawan Tebal',
           icon: Icons.cloud_rounded,
-          gradientColors: [Color(0xFF4B6CB7), Color(0xFF182848)],
-          primaryColor: Colors.blueGrey,
+          gradientColors: [Color(0xFF8B3A62), Color(0xFFB56B8A)],
+          primaryColor: Color(0xFF8B3A62),
         );
       case 45:
       case 48:
         return const WeatherCodeInfo(
           description: 'Berkabut',
           icon: Icons.blur_on_rounded,
-          gradientColors: [Color(0xFF606c38), Color(0xFF283618)],
-          primaryColor: Colors.teal,
+          gradientColors: [Color(0xFFA3B06D), Color(0xFFE8EDCF)],
+          primaryColor: Color(0xFF7B8B4E),
         );
       case 51:
         return const WeatherCodeInfo(
           description: 'Gerimis Ringan',
           icon: Icons.grain_rounded,
-          gradientColors: [Color(0xFF3a7bd5), Color(0xFF2b5876)],
-          primaryColor: Colors.lightBlue,
+          gradientColors: [Color(0xFFB8D8E8), Color(0xFFC5DEAD)],
+          primaryColor: Color(0xFF6FA3C0),
         );
       case 53:
       case 55:
         return const WeatherCodeInfo(
           description: 'Gerimis Sedang / Lebat',
           icon: Icons.grain_rounded,
-          gradientColors: [Color(0xFF1F1C2C), Color(0xFF928DAB)],
-          primaryColor: Colors.blue,
+          gradientColors: [Color(0xFF8B3A62), Color(0xFFB8D8E8)],
+          primaryColor: Color(0xFF6FA3C0),
         );
       case 56:
       case 57:
         return const WeatherCodeInfo(
           description: 'Gerimis Dingin Membeku',
           icon: Icons.ac_unit_rounded,
-          gradientColors: [Color(0xFF00c6ff), Color(0xFF0072ff)],
-          primaryColor: Colors.cyan,
+          gradientColors: [Color(0xFFB8D8E8), Color(0xFFF5CAC3)],
+          primaryColor: Color(0xFF6FA3C0),
         );
       case 61:
         return const WeatherCodeInfo(
           description: 'Hujan Ringan',
           icon: Icons.water_drop_outlined,
-          gradientColors: [Color(0xFF283E51), Color(0xFF4B79A1)],
-          primaryColor: Colors.blueAccent,
+          gradientColors: [Color(0xFFB8D8E8), Color(0xFF8B3A62)],
+          primaryColor: Color(0xFF6FA3C0),
         );
       case 63:
         return const WeatherCodeInfo(
           description: 'Hujan Sedang',
           icon: Icons.water_drop_rounded,
-          gradientColors: [Color(0xFF141E30), Color(0xFF243B55)],
-          primaryColor: Colors.blue,
+          gradientColors: [Color(0xFF7B8B4E), Color(0xFFB8D8E8)],
+          primaryColor: Color(0xFF6FA3C0),
         );
       case 65:
         return const WeatherCodeInfo(
           description: 'Hujan Lebat',
           icon: Icons.thunderstorm_outlined,
-          gradientColors: [Color(0xFF0f2027), Color(0xFF203a43)],
-          primaryColor: Colors.indigo,
+          gradientColors: [Color(0xFF8B3A62), Color(0xFF7B8B4E)],
+          primaryColor: Color(0xFF8B3A62),
         );
       case 66:
       case 67:
         return const WeatherCodeInfo(
           description: 'Hujan Es Beku',
           icon: Icons.severe_cold_rounded,
-          gradientColors: [Color(0xFF1D976C), Color(0xFF93F9B9)],
-          primaryColor: Colors.cyanAccent,
+          gradientColors: [Color(0xFFC5DEAD), Color(0xFFB8D8E8)],
+          primaryColor: Color(0xFF7FAF60),
         );
       case 71:
       case 73:
@@ -112,8 +113,8 @@ class WeatherCodeHelper {
         return const WeatherCodeInfo(
           description: 'Hujan Salju',
           icon: Icons.ac_unit_rounded,
-          gradientColors: [Color(0xFF83a4d4), Color(0xFFb6fbff)],
-          primaryColor: Colors.lightBlueAccent,
+          gradientColors: [Color(0xFFB8D8E8), Color(0xFFF5CAC3)],
+          primaryColor: Color(0xFF6FA3C0),
         );
       case 80:
       case 81:
@@ -121,38 +122,38 @@ class WeatherCodeHelper {
         return const WeatherCodeInfo(
           description: 'Hujan Badai Lokal',
           icon: Icons.beach_access_rounded,
-          gradientColors: [Color(0xFF1e3c72), Color(0xFF2a5298)],
-          primaryColor: Colors.blue,
+          gradientColors: [Color(0xFF8B3A62), Color(0xFFB8D8E8)],
+          primaryColor: Color(0xFF8B3A62),
         );
       case 85:
       case 86:
         return const WeatherCodeInfo(
           description: 'Hujan Badai Salju',
           icon: Icons.ac_unit_outlined,
-          gradientColors: [Color(0xFF2C3E50), Color(0xFF4CA1AF)],
-          primaryColor: Colors.cyan,
+          gradientColors: [Color(0xFFB8D8E8), Color(0xFFC5DEAD)],
+          primaryColor: Color(0xFF6FA3C0),
         );
       case 95:
         return const WeatherCodeInfo(
           description: 'Badai Petir',
           icon: Icons.flash_on_rounded,
-          gradientColors: [Color(0xFF141E30), Color(0xFF243B55)],
-          primaryColor: Colors.amber,
+          gradientColors: [Color(0xFF8B3A62), Color(0xFFFFE9A0)],
+          primaryColor: Color(0xFFD4A843),
         );
       case 96:
       case 99:
         return const WeatherCodeInfo(
           description: 'Badai Petir & Hujan Es',
           icon: Icons.thunderstorm_rounded,
-          gradientColors: [Color(0xFF0F2027), Color(0xFF2C5364)],
-          primaryColor: Colors.deepOrangeAccent,
+          gradientColors: [Color(0xFF8B3A62), Color(0xFF7B8B4E)],
+          primaryColor: Color(0xFF8B3A62),
         );
       default:
         return const WeatherCodeInfo(
           description: 'Cuaca Berubah',
           icon: Icons.cloud_outlined,
-          gradientColors: [Color(0xFF3E5151), Color(0xFFDECBA4)],
-          primaryColor: Colors.blueGrey,
+          gradientColors: [Color(0xFFA3B06D), Color(0xFFF5CAC3)],
+          primaryColor: Color(0xFF7B8B4E),
         );
     }
   }

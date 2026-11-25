@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../theme/app_theme.dart';
 
 class EmptyErrorView extends StatelessWidget {
   final String title;
@@ -25,15 +26,15 @@ class EmptyErrorView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(22),
               decoration: BoxDecoration(
-                color: Colors.red.shade50,
+                color: PastelColors.pastelPink.withValues(alpha: 0.4),
                 shape: BoxShape.circle,
               ),
               child: Icon(
                 icon,
-                size: 64,
-                color: Colors.red.shade400,
+                size: 56,
+                color: PastelColors.burgundy,
               ),
             ),
             const SizedBox(height: 20),
@@ -42,15 +43,16 @@ class EmptyErrorView extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
+                color: PastelColors.textDark,
               ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 10),
             Text(
               message,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 14,
-                color: Colors.grey.shade600,
+                color: PastelColors.textMuted,
                 height: 1.4,
               ),
               textAlign: TextAlign.center,
@@ -62,12 +64,13 @@ class EmptyErrorView extends StatelessWidget {
                 icon: const Icon(Icons.refresh_rounded),
                 label: Text(retryText),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF1E3A8A),
+                  backgroundColor: PastelColors.burgundy,
                   foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                  padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(14),
                   ),
+                  elevation: 0,
                 ),
               ),
             ],

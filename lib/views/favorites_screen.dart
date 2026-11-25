@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../theme/app_theme.dart';
 import '../viewmodels/location_viewmodel.dart';
 import '../viewmodels/weather_viewmodel.dart';
 import '../widgets/search_result_tile.dart';
@@ -26,13 +27,13 @@ class FavoritesScreen extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(24),
                       decoration: BoxDecoration(
-                        color: Colors.amber.shade50,
+                        color: PastelColors.burgundyLight.withValues(alpha: 0.5),
                         shape: BoxShape.circle,
                       ),
-                      child: Icon(
-                        Icons.star_border_rounded,
+                      child: const Icon(
+                        Icons.favorite_border_rounded,
                         size: 72,
-                        color: Colors.amber.shade600,
+                        color: PastelColors.burgundy,
                       ),
                     ),
                     const SizedBox(height: 24),
@@ -41,14 +42,15 @@ class FavoritesScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
+                        color: PastelColors.textDark,
                       ),
                     ),
                     const SizedBox(height: 10),
-                    Text(
-                      'Tandai kota favorit Anda dengan menekan ikon bintang di halaman beranda atau hasil pencarian untuk akses cepat.',
+                    const Text(
+                      'Tandai kota favorit Anda dengan menekan ikon hati di halaman beranda atau hasil pencarian untuk akses cepat.',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Colors.grey.shade600,
+                        color: PastelColors.textMuted,
                         fontSize: 14,
                         height: 1.4,
                       ),
@@ -69,7 +71,7 @@ class FavoritesScreen extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     padding: const EdgeInsets.only(right: 20),
                     decoration: BoxDecoration(
-                      color: Colors.red.shade400,
+                      color: PastelColors.burgundySoft,
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: const Icon(Icons.delete_rounded, color: Colors.white),
