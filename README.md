@@ -42,7 +42,7 @@ Proyek ini dibangun untuk memenuhi tugas **Responsi Praktikum Pemrograman Mobile
 - **Pencarian Kota Real-Time**: Input pencarian terhubung langsung ke **Open-Meteo Geocoding API** dengan mekanisme *debounce* (500ms) agar efisien dalam melakukan request jaringan.
 - **Daftar Hasil Pencarian**: Menampilkan nama kota, wilayah/provinsi, negara, dan koordinat lintang-bujur (*latitude & longitude*).
 - **Pemilihan Lokasi**: Memilih salah satu kota pada daftar akan langsung memperbarui data cuaca pada layar utama dan menyimpannya sebagai lokasi terakhir.
-- **Simpan Lokasi Favorit**: Pengguna dapat menandai kota sebagai favorit dengan menekan ikon love.
+- **Simpan Lokasi Favorit**: Pengguna dapat menandai kota sebagai favorit dengan menekan ikon hati (♥).
 - **Riwayat Pencarian**: Menampilkan daftar kota yang pernah dicari dengan opsi hapus riwayat.
 
 ### 3. Layar Favorit (Favorites Screen)
@@ -61,6 +61,7 @@ Proyek ini dibangun untuk memenuhi tugas **Responsi Praktikum Pemrograman Mobile
 | 4. Search Screen (Pencarian API) | 5. Favorites Screen (Kota Favorit) | 6. Search Screen (Riwayat Pencarian) |
 |:---:|:---:|:---:|
 | <img src="https://github.com/user-attachments/assets/21f812a8-57bb-4259-bb56-ef864cafcd73" width="250" alt="Search Screen" /> | <img src="https://github.com/user-attachments/assets/ed5027ee-6347-42bb-aef1-b64103fe4931" width="250" alt="Favorites Screen" /> | <img src="https://github.com/user-attachments/assets/b98bef38-7a81-4bfb-b510-47e5fa6cc9eb" width="250" alt="Riwayat Pencarian" /> |
+
 ---
 
 ## 🏛️ Arsitektur Aplikasi (MVVM)
@@ -71,7 +72,7 @@ Aplikasi ini menggunakan pola arsitektur **Model-View-ViewModel (MVVM)** dengan 
 ┌─────────────────────────────────────────────────────────────┐
 │                           VIEW                              │
 │   (HomeScreen, SearchScreen, FavoritesScreen, Widgets)      │
-│   - Bertanggung jawab murni pada tampilan antarmuka (UI).    │
+│   - Bertanggung jawab murni pada tampilan antarmuka (UI).   │
 │   - Mendengarkan perubahan data melalui Consumer / watch.   │
 └──────────────────────────────▲──────────────────────────────┘
                                │ Membaca State & Memicu Event
@@ -80,7 +81,7 @@ Aplikasi ini menggunakan pola arsitektur **Model-View-ViewModel (MVVM)** dengan 
 │                        VIEWMODEL                            │
 │           (WeatherViewModel, LocationViewModel)             │
 │   - Menangani logika bisnis dan manajemen state aplikasi.   │
-│   - Memperbarui state dan memanggil notifyListeners().     │
+│   - Memperbarui state dan memanggil notifyListeners().      │
 └──────────────────────────────▲──────────────────────────────┘
                                │ Memanggil Service
                                ▼
@@ -93,8 +94,8 @@ Aplikasi ini menggunakan pola arsitektur **Model-View-ViewModel (MVVM)** dengan 
                                ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                           MODEL                             │
-│   (WeatherData, CurrentWeather, DailyForecast, LocationModel)│
-│   - Representasi struktur data Dart dengan fromJson / toJson │
+│ (WeatherData, CurrentWeather, DailyForecast, LocationModel) │
+│   - Representasi struktur data Dart (fromJson / toJson).    │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -117,11 +118,6 @@ responsipemmob/
 ├── android/                        # Konfigurasi platform Android
 ├── ios/                            # Konfigurasi platform iOS
 ├── web/                            # Konfigurasi platform Web
-├── screenshots/                    # Screenshot setiap layar aplikasi
-│   ├── 1_home_screen.png           # Tampilan cuaca terkini & info tambahan
-│   ├── 2_forecast_scroll.png       # Tampilan scroll prakiraan 7 hari
-│   ├── 3_search_screen.png         # Tampilan pencarian kota & hasil API
-│   └── 4_favorites_screen.png      # Tampilan daftar lokasi favorit
 ├── lib/
 │   ├── main.dart                   # Titik masuk aplikasi & konfigurasi MultiProvider
 │   ├── theme/
@@ -208,7 +204,7 @@ Pastikan Flutter SDK sudah terpasang di komputer Anda (Flutter 3.x dan Dart 3.x)
 1. **Clone repository ini**:
    ```bash
    git clone https://github.com/talithanashier/H1D024098-ResponsiPrakPemmob-ShiftD-AplikasiPerkiraanCuaca.git
-   cd responsipemmob
+   cd H1D024098-ResponsiPrakPemmob-ShiftD-AplikasiPerkiraanCuaca
    ```
 
 2. **Pasang dependensi**:
