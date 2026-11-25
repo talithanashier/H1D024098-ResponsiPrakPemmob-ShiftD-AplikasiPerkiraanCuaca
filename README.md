@@ -209,7 +209,7 @@ Pastikan Flutter SDK sudah terpasang di komputer Anda (Flutter 3.x dan Dart 3.x)
 
 1. **Clone repository ini**:
    ```bash
-   git clone <https://github.com/talithanashier/H1D024098-ResponsiPrakPemmob-ShiftD-AplikasiPerkiraanCuaca.git>
+   git clone https://github.com/talithanashier/H1D024098-ResponsiPrakPemmob-ShiftD-AplikasiPerkiraanCuaca.git
    cd responsipemmob
    ```
 
