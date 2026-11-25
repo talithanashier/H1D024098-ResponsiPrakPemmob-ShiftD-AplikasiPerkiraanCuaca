@@ -42,7 +42,7 @@ Proyek ini dibangun untuk memenuhi tugas **Responsi Praktikum Pemrograman Mobile
 - **Pencarian Kota Real-Time**: Input pencarian terhubung langsung ke **Open-Meteo Geocoding API** dengan mekanisme *debounce* (500ms) agar efisien dalam melakukan request jaringan.
 - **Daftar Hasil Pencarian**: Menampilkan nama kota, wilayah/provinsi, negara, dan koordinat lintang-bujur (*latitude & longitude*).
 - **Pemilihan Lokasi**: Memilih salah satu kota pada daftar akan langsung memperbarui data cuaca pada layar utama dan menyimpannya sebagai lokasi terakhir.
-- **Simpan Lokasi Favorit**: Pengguna dapat menandai kota sebagai favorit dengan menekan ikon bintang (★).
+- **Simpan Lokasi Favorit**: Pengguna dapat menandai kota sebagai favorit dengan menekan ikon love.
 - **Riwayat Pencarian**: Menampilkan daftar kota yang pernah dicari dengan opsi hapus riwayat.
 
 ### 3. Layar Favorit (Favorites Screen)
